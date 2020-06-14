@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <title>Upload | WeTube</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__wrapper">
+        <div class="header__column">
+          <a href="/"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="header__column">
+          <form action="/search" method="get">
+            <input type="text" placeholder="Search by term..." name="term" />
+          </form>
+        </div>
+        <div class="header__column">
+          <ul>
+            <li><a href="/videos/upload">Upload</a></li>
+            <li><a href="/me">Profile</a></li>
+            <li><a href="/logout">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="form-container">
+        <div class="record-container" id="jsRecordContainer">
+          <video id="jsVideoPreview"></video
+          ><button id="jsRecordBtn">Start Recording</button>
+        </div>
+        <form
+          action="/videos/upload"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="fileUpload">
+            <label for="file">Video File</label
+            ><input
+              type="file"
+              id="file"
+              name="videoFile"
+              required
+              accept="video/*"
+            />
+          </div>
+          <input
+            type="text"
+            placeholder="Title"
+            name="title"
+            required
+          /><textarea
+            name="description"
+            placeholder="Description"
+            required
+          ></textarea
+          ><input type="submit" value="Upload Video" />
+        </form>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__icon"><i class="fab fa-youtube"></i></div>
+      <span class="footer__text">WeTube 2020 &copy;</span>
+    </footer>
+    <script src="/static/main.js"></script>
+  </body>
+</html>
