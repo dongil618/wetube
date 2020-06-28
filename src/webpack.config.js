@@ -15,36 +15,36 @@ const config = {
         test: /\.(js)$/,
         use: [
           {
-            loader: "babel-loader"
-          }
-        ]
+            loader: "babel-loader",
+          },
+        ],
       },
       {
         test: /\.(scss)$/,
         use: ExtractCSS.extract([
           {
-            loader: "css-loader" //webpack이 css를 이해할 수 있도록하는 loader
+            loader: "css-loader", //webpack이 css를 이해할 수 있도록하는 loader
           },
           {
             loader: "postcss-loader", // CSS를 받아서 우리가 주는 plugin 을 가지고 css를 변환 -> css 호환관련 끝냄
             options: {
               plugins() {
                 return [autoprefixer({ browsers: "cover 99.5%" })];
-              }
-            }
+              },
+            },
           },
           {
-            loader: "sass-loader" //SCSS혹은 SASS를 받아서 일반 CSS로 변환
-          }
-        ])
-      }
-    ]
+            loader: "sass-loader", //SCSS혹은 SASS를 받아서 일반 CSS로 변환
+          },
+        ]),
+      },
+    ],
   },
   output: {
     path: OUTPUT_DIR,
-    filename: "[name].js"
+    filename: "[name].js",
   },
-  plugins: [new ExtractCSS("styles.css")]
+  plugins: [new ExtractCSS("styles.css")],
 };
 
 module.exports = config;
