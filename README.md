@@ -45,7 +45,7 @@ Node.js 웹 프레임워크를 사용해 유튜브와 똑같은 기능들을 구
 <br>
 <br>
 
-- 각 화면별 설명
+- 각 패이지별 설명
 
 ![이미지 001](https://user-images.githubusercontent.com/47559613/119304308-06d0c080-bca2-11eb-8385-a99a6fb420f7.jpg)
 1. Upload된 Video들이 나타나는 화면.
